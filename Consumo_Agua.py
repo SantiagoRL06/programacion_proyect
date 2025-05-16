@@ -25,3 +25,37 @@ def registrar_consumo():
     except ValueError:
         print("⚠ Error: debe ingresar un número válido.")
 
+# Función para mostrar estadísticas básicas
+def mostrar_estadisticas():
+    if not consumos:
+        print("⚠ No hay datos registrados.")
+        return
+
+    total = sum([dato[1] for dato in consumos])
+    promedio = total / len(consumos)
+    maximo = max(consumos, key=lambda x: x[1])
+    minimo = min(consumos, key=lambda x: x[1])
+
+    print("\n--- ESTADÍSTICAS ---")
+    print(f"Total de consumo: {total:.2f} litros")
+    print(f"Promedio diario: {promedio:.2f} litros")
+    print(f"Día de mayor consumo: {maximo[0]} con {maximo[1]} litros")
+    print(f"Día de menor consumo: {minimo[0]} con {minimo[1]} litros")
+
+# Función para editar un consumo existente
+def editar_dato():
+    fecha = input("Ingrese la fecha del registro a editar: ")
+    for dato in consumos:
+        if dato[0] == fecha:
+            try:
+                nuevo = float(input(f"Ingrese el nuevo valor para {fecha}: "))
+                dato[1] = nuevo
+                print("✅ Registro actualizado.")
+                return
+            except ValueError:
+                print("⚠ Error: debe ingresar un número válido.")
+                return
+    print("⚠ Registro no encontrado.")
+
+
+
