@@ -57,5 +57,25 @@ def editar_dato():
                 return
     print("⚠ Registro no encontrado.")
 
+# Función para eliminar un registro
+def eliminar_dato():
+    fecha = input("Ingrese la fecha del registro a eliminar: ")
+    for i, dato in enumerate(consumos):
+        if dato[0] == fecha:
+            del consumos[i]
+            print("✅ Registro eliminado.")
+            return
+    print("⚠ Registro no encontrado.")
 
+# Función para mostrar el historial completo
+def mostrar_historial():
+    if not consumos:
+        print("⚠ No hay datos registrados.")
+        return
+
+    print("\n--- HISTORIAL DE CONSUMO ---")
+    for fecha, litros in consumos:
+        print(f"{fecha}: {litros} litros")
+
+    
 
