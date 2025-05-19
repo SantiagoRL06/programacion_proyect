@@ -8,12 +8,12 @@ consumos = []
 # Función para mostrar el menú principal
 def menu():
     print("\n--- MENÚ PRINCIPAL ---")
-    print("1. Registrar consumo")
-    print("2. Ver estadísticas")
-    print("3. Editar un dato")
-    print("4. Eliminar un dato")
-    print("5. Ver historial")
-    print("6. Salir")
+    print("1. Registrar consumo:")
+    print("2. Ver estadísticas:")
+    print("3. Editar un dato:")
+    print("4. Eliminar un dato:")
+    print("5. Ver historial:")
+    print("6. Salir:")
 
 # Función para registrar un nuevo consumo
 def registrar_consumo():
